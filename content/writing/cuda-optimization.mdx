@@ -1,0 +1,22 @@
+---
+title: "CUDA Optimization Notes from an Attention Kernel"
+summary: "A systems note on tile shape, register pressure, shared memory, and IO-aware attention."
+date: "2026-02-15"
+tags:
+  - CUDA
+  - Attention
+  - Kernel Engineering
+readingTime: "15 min"
+---
+
+CUDA optimization starts with memory motion.
+
+```cpp
+for (int block = 0; block < n_blocks; ++block) {
+  load_kv_tile(block);
+  update_online_softmax();
+  accumulate_output();
+}
+```
+
+The public writing route renders code-oriented notes with references back to the systems case studies.

@@ -1,0 +1,157 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-sans: "Inter Variable", "Inter", "IBM Plex Sans", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", "JetBrains Mono", "IBM Plex Mono", ui-monospace, monospace;
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-display: "Space Grotesk Variable", "Space Grotesk", "Inter Variable", system-ui, sans-serif;
+  --color-bg: 246 248 247;
+  --color-panel: 255 255 255;
+  --color-ink: 16 23 20;
+  --color-muted: 75 86 81;
+  --color-faint: 121 132 126;
+  --color-line: 213 221 216;
+  --color-accent: 0 124 137;
+  --color-signal: 0 137 91;
+  --color-warn: 180 70 54;
+  --color-biz: 168 88 22;
+  --diagram-training: rgb(237 246 241);
+  --diagram-alignment: rgb(236 245 246);
+  --diagram-compression: rgb(241 246 238);
+  --diagram-inference: rgb(235 244 243);
+  --diagram-evaluation: rgb(241 243 240);
+}
+
+[data-theme="dark"] {
+  --color-bg: 10 14 13;
+  --color-panel: 15 21 19;
+  --color-ink: 235 241 237;
+  --color-muted: 172 184 178;
+  --color-faint: 116 132 124;
+  --color-line: 44 56 51;
+  --color-accent: 78 194 204;
+  --color-signal: 107 213 151;
+  --color-warn: 236 126 107;
+  --color-biz: 231 160 84;
+  --diagram-training: rgb(18 34 28);
+  --diagram-alignment: rgb(17 35 36);
+  --diagram-compression: rgb(28 35 22);
+  --diagram-inference: rgb(16 34 33);
+  --diagram-evaluation: rgb(26 30 27);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  background: rgb(var(--color-bg));
+  color: rgb(var(--color-ink));
+  font-family: var(--font-sans);
+  text-rendering: optimizeLegibility;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+::selection {
+  background: rgb(var(--color-accent) / 0.18);
+}
+
+:focus-visible {
+  outline: 2px solid rgb(var(--color-accent));
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--color-bg));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--color-line));
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(var(--color-faint));
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.prose-lab {
+  color: rgb(var(--color-muted));
+}
+
+.prose-lab h2,
+.prose-lab h3,
+.prose-lab strong {
+  color: rgb(var(--color-ink));
+}
+
+.prose-lab pre {
+  border: 1px solid rgb(var(--color-line));
+  background: rgb(var(--color-panel));
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose-lab code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+}
+
+.react-flow__attribution {
+  display: none;
+}
+
+/* Interactive panel: gentle lift + shadow on devices with hover. */
+.panel-hover {
+  transition:
+    transform 0.4s cubic-bezier(0.21, 0.65, 0.36, 1),
+    border-color 0.3s ease,
+    box-shadow 0.4s cubic-bezier(0.21, 0.65, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .panel-hover:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 14px 36px rgb(0 0 0 / 0.09);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel-hover,
+  .panel-hover:hover {
+    transform: none;
+    transition: border-color 0.2s ease;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .overflow-x-hidden-mobile {
+    overflow-x: hidden;
+  }
+}

@@ -1,0 +1,6 @@
+.next
+.contentlayer
+out
+node_modules
+.vercel
+*.log

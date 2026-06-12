@@ -1,0 +1,6 @@
+site: out
+output_subdir: pagefind
+glob: "**/*.html"
+exclude_selectors:
+  - "[data-pagefind-ignore]"
+force_language: en

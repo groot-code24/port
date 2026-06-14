@@ -8,8 +8,8 @@ export const businessConfig = {
   // TODO(Mani): create a free Cal.com account and replace this link.
   // Until then the button still works — it falls back to email if you set
   // bookingUrl to "".
-  bookingUrl: "https://cal.com/mani-pal/intro",
-  whatsappNumber: "917380626997",
+  bookingUrl: "https://calendly.com/palmani2410/new-meeting",
+  whatsappNumber: "+91 7380626997",
   whatsappPrefill:
     "Hi Mani — found your portfolio. I'd like to talk about an inference optimization engagement.",
   email: "palmani2410@gmail.com",
